@@ -23,10 +23,6 @@ import webbrowser
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-import qrcode
-import tkinter as tk
-from PIL import Image, ImageTk
-
 MOVIE_FOLDER = "MOVIES_DC1"
 PORT = 9284
 LOGO_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"]
