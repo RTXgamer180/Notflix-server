@@ -24,7 +24,7 @@ from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 MOVIE_FOLDER = "MOVIES_DC1"
-PORT = int(os.environ.get("PORT", 5000))
+PORT = int(os.environ.get("PORT", 8080))
 LOGO_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"]
 VIDEO_EXTENSIONS = [".mp4"]
 LINK_EXTENSIONS = [".url", ".link", ".youtube", ".yt"]
