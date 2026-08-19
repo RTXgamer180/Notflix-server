@@ -3482,8 +3482,8 @@ class Handler(BaseHTTPRequestHandler):
 
           <label class="upload-file-picker" for="uploadFiles">
             <strong>Choose files</strong>
-            <span>.mcaddon, .mcpack, .mcworld, .mctemplate, .mcfunction, .mcstructure, .mcskin, .zip, .schem, .litematic, .json, .png, or .txt</span>
-            <input id="uploadFiles" type="file" accept=".mcaddon,.mcpack,.mcworld,.mctemplate,.mcfunction,.mcstructure,.mcskin,.zip,.schem,.litematic,.json,.png,.txt" multiple required />
+            <span></span>
+            <input id="uploadFiles" type="file" accept="*" multiple required />
           </label>
 
           <div class="upload-split">
