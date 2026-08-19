@@ -2091,7 +2091,7 @@ class Handler(BaseHTTPRequestHandler):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NotFlix</title>
+  <title>NotFlix (VERY UNSTABLE FOR NOW)</title>
   <style>
     :root {
       color-scheme: dark;
