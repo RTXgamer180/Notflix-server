@@ -4626,11 +4626,24 @@ class Handler(BaseHTTPRequestHandler):
       publishUploadButton.disabled = true;
       uploadStatus.textContent = files.length === 1 ? "Publishing your upload..." : `Publishing ${files.length} uploads...`;
       try {
-        const response = await fetch("/uploads", { method: "POST", body: formData });
-        const data = await response.json();
+        const response = await fetch("/uploads", {
+          method: "POST",
+          body: formData
+        });
+        
+        const contentType = response.headers.get("content-type") || "";
+        
         if (!response.ok) {
-          throw new Error(data.error || "Could not publish the upload.");
+          if (contentType.includes("application/json")) {
+            const data = await response.json();
+            throw new Error(data.error || "Could not publish the upload.");
+          }
+        
+          const text = await response.text();
+          throw new Error(`Server error (${response.status}): ${text.slice(0, 200)}`);
         }
+        
+        const data = await response.json();
 
         uploadForm.reset();
         await loadUploads(`Published ${data.items.length} ${pluralize(data.items.length, "upload")}.`);
