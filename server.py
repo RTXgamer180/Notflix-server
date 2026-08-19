@@ -104,7 +104,11 @@ YOUTUBE_RANDOM_QUERIES = [
     "RTXgamer180",
     "Kai_Cenat"
 ]
+RUNNING_ON_RENDER = os.environ.get("RENDER") == "true"
 
+
+if not RUNNING_ON_RENDER:
+    import tkinter as tk
 
 def get_media_root():
     root = os.path.abspath(MOVIE_FOLDER)
@@ -1643,20 +1647,10 @@ def render_minecraft_skin_view(profile, view_name):
 
 
 def show_qr(url):
-    qr = qrcode.make(url)
-
-    root = tk.Tk()
-    root.title("NotFlix QR-Code(vor Ez Acces)")
-
-    image = ImageTk.PhotoImage(qr)
-
-    label = tk.Label(root, image=image)
-    label.image = image
-    label.pack()
-    tk.Label(root, text=url).pack(pady=10)
-    tk.Button(root, text="Close", command=root.destroy).pack(pady=10)
-
-    root.mainloop()
+    print("\n" + "=" * 60)
+    print("🔗 NotFlix Access URL:")
+    print(url)
+    print("=" * 60 + "\n")
 
 
 class Handler(BaseHTTPRequestHandler):
