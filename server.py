@@ -97,7 +97,6 @@ YOUTUBE_RANDOM_QUERIES = [
     "Arazhul",
     "Roblox",
     "Chaosflo44",
-    "RTXgamer180",
     "Kai_Cenat"
 ]
 RUNNING_ON_RENDER = os.environ.get("RENDER") == "true"
