@@ -3,4 +3,3 @@ gunicorn
 qrcode
 webhooks
 sockets
-pygame
